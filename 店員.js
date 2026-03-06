@@ -33,10 +33,30 @@ function updateCart(){
 let html=""
 
 for(let key in cart){
-html += `${key} × ${cart[key].count}<br>`
+html += `
+${key} × ${cart[key].count}
+<button onclick="removeItem('${key}')">－</button>
+<br>
+`
 }
 
 document.getElementById("cart").innerHTML=html
+
+}
+
+function removeItem(name){
+
+if(cart[name]){
+cart[name].count--
+
+if(cart[name].count <= 0){
+delete cart[name]
+}
+
+}
+
+updateCart()
+updateTotal()
 
 }
 
@@ -86,6 +106,7 @@ document.getElementById("change").textContent=0
 }
 
 loadProducts()
+
 
 
 

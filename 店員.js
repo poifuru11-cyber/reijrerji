@@ -96,15 +96,6 @@ document.getElementById("change").textContent=0
 }
 
 loadProducts()
-localStorage.setItem("sales",JSON.stringify(sales))
-
-alert("会計完了")
-
-cart={}
-updateTotal()
-
-}
 
 
-loadProducts()
 

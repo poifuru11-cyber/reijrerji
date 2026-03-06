@@ -15,19 +15,6 @@ document.getElementById("products").innerHTML = html
 
 }
 
-function loadProducts(){
-
-const html = products.map(item => `
-<button onclick="send('${item.name}',${item.price})">
-${item.name}<br>
-${item.price}円
-</button>
-`).join('');
-
-document.getElementById("products").innerHTML = html;
-
-}
-
 function send(name,price){
 
 if(cart[name]){
@@ -99,6 +86,7 @@ document.getElementById("change").textContent=0
 }
 
 loadProducts()
+
 
 
 

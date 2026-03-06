@@ -5,67 +5,103 @@ body {
   color: #333;
 }
 
+/* タイトル */
+
 h1 {
   text-align: center;
-  padding: 20px;
+  padding: 15px;
   margin: 0;
+  background: #2c3e50;
+  color: white;
 }
+
+/* メニュー */
 
 a {
   display: inline-block;
-  margin: 10px 20px;
+  margin: 10px;
   text-decoration: none;
   color: white;
   background: #4CAF50;
   padding: 8px 16px;
   border-radius: 6px;
-  transition: 0.2s;
 }
 
-a:hover {
-  background: #45a049;
+/* 商品ボタンエリア */
+
+#products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px,1fr));
+  gap: 12px;
+  padding: 15px;
 }
 
-button {
+/* 商品ボタン */
+
+#products button {
   border: none;
   background: white;
-  padding: 10px;
-  margin: 10px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-}
-
-#stock-list div {
-  background: white;
-  margin: 10px 20px;
   padding: 15px;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  font-size: 16px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
 }
 
-
-.products {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-  gap: 15px;
-  padding: 20px;
+#products button:active {
+  transform: scale(0.96);
 }
 
-.products {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-  gap: 15px;
-  padding: 20px;
+/* カート */
+
+#cart {
+  background: white;
+  margin: 15px;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
 }
 
+/* 合計 */
+
+#total {
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  margin: 10px;
+}
+
+/* 入力 */
+
+input {
+  width: calc(100% - 30px);
+  margin: 10px 15px;
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* お釣り */
+
+#change {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* 確定ボタン */
+
+button.confirm {
+  width: calc(100% - 30px);
+  margin: 15px;
+  padding: 15px;
+  font-size: 18px;
+  background: #4CAF50;
+  color: white;
+  border-radius: 10px;
+}
 .products img {
   width: 100%;
   border-radius: 8px;
+
 }

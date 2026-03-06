@@ -105,3 +105,28 @@ button.confirm {
   border-radius: 8px;
 
 }
+
+/* 商品ボタン色 */
+
+.product-btn{
+  color:white;
+  font-weight:bold;
+}
+
+/* 野菜 */
+
+.veg{
+  background:#4CAF50;
+}
+
+/* 果物 */
+
+.fruit{
+  background:#FF7043;
+}
+
+/* その他 */
+
+.other{
+  background:#607D8B;
+}

@@ -5,7 +5,7 @@ function loadProducts(){
 let products = JSON.parse(localStorage.getItem("products")) || []
 
 const html = products.map(item => `
-<button onclick="send('${item.name}',${item.price})">
+<button class="product-btn ${item.type}" onclick="send('${item.name}',${item.price})">
 ${item.name}<br>
 ${item.price}円
 </button>
@@ -13,6 +13,7 @@ ${item.price}円
 
 document.getElementById("products").innerHTML = html
 
+}
 }
 
 function send(name,price){
@@ -106,6 +107,7 @@ document.getElementById("change").textContent=0
 }
 
 loadProducts()
+
 
 
 

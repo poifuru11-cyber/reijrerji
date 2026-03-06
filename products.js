@@ -32,15 +32,13 @@ function addProduct(){
 
 let name = document.getElementById("name").value
 let price = Number(document.getElementById("price").value)
+let type = document.getElementById("type").value
 
 let products = JSON.parse(localStorage.getItem("products")) || []
 
-products.push({name,price})
+products.push({name,price,type})
 
 localStorage.setItem("products",JSON.stringify(products))
-
-document.getElementById("name").value=""
-document.getElementById("price").value=""
 
 loadProducts()
 

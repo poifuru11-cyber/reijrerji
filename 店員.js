@@ -61,17 +61,11 @@ calcChange()
 function calcChange(){
 
 let total = Number(document.getElementById("total").textContent)
-
 let paid = Number(document.getElementById("paid").value) || 0
 
 let change = paid - total
 
-if(paid === 0){
-document.getElementById("change").textContent = 0
-return
-}
-
-document.getElementById("change").textContent = change
+document.getElementById("change").textContent = change > 0 ? change : 0
 
 }
 function confirmPurchase(){
@@ -96,6 +90,7 @@ document.getElementById("change").textContent=0
 }
 
 loadProducts()
+
 
 
 

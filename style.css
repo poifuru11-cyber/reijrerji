@@ -11,7 +11,7 @@ h1 {
   text-align: center;
   padding: 15px;
   margin: 0;
-  background: #2c3e50;
+  background: #4CAF50;
   color: white;
 }
 
@@ -38,17 +38,32 @@ a {
 
 /* 商品ボタン */
 
-#products button {
+.product-btn{
   border: none;
-  background: white;
   padding: 15px;
   border-radius: 10px;
   font-size: 16px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
 }
 
-#products button:active {
-  transform: scale(0.96);
+.product-btn:active{
+  transform: scale(0.95);
+}
+
+/* 色カテゴリ */
+
+.veg{
+  background:#4CAF50;
+}
+
+.fruit{
+  background:#FF7043;
+}
+
+.other{
+  background:#607D8B;
 }
 
 /* カート */
@@ -68,6 +83,7 @@ a {
   font-weight: bold;
   text-align: center;
   margin: 10px;
+  color:#4CAF50;
 }
 
 /* 入力 */
@@ -87,6 +103,7 @@ input {
   font-size: 24px;
   text-align: center;
   margin-bottom: 10px;
+  color:#4CAF50;
 }
 
 /* 確定ボタン */
@@ -99,34 +116,4 @@ button.confirm {
   background: #4CAF50;
   color: white;
   border-radius: 10px;
-}
-.products img {
-  width: 100%;
-  border-radius: 8px;
-
-}
-
-/* 商品ボタン色 */
-
-.product-btn{
-  color:white;
-  font-weight:bold;
-}
-
-/* 野菜 */
-
-.veg{
-  background:#4CAF50;
-}
-
-/* 果物 */
-
-.fruit{
-  background:#FF7043;
-}
-
-/* その他 */
-
-.other{
-  background:#607D8B;
 }

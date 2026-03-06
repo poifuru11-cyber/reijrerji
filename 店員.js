@@ -1,10 +1,19 @@
 let cart = {};
 
-const products = [
- {name:"レタス", price:257},
- {name:"トマト", price:300},
- {name:"きゅうり", price:120}
-];
+function loadProducts(){
+
+let products = JSON.parse(localStorage.getItem("products")) || []
+
+const html = products.map(item => `
+<button onclick="send('${item.name}',${item.price})">
+${item.name}<br>
+${item.price}円
+</button>
+`).join('');
+
+document.getElementById("products").innerHTML = html
+
+}
 
 function loadProducts(){
 
@@ -90,6 +99,7 @@ document.getElementById("change").textContent=0
 }
 
 loadProducts()
+
 
 
 

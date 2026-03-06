@@ -27,7 +27,20 @@ cart[name].count++
 cart[name]={count:1,price:price}
 }
 
+updateCart()
 updateTotal()
+
+}
+
+function updateCart(){
+
+let html=""
+
+for(let key in cart){
+html += `${key} × ${cart[key].count}<br>`
+}
+
+document.getElementById("cart").innerHTML=html
 
 }
 
@@ -40,6 +53,20 @@ total += cart[key].count * cart[key].price
 }
 
 document.getElementById("total").textContent=total
+
+calcChange()
+
+}
+
+function calcChange(){
+
+let total = Number(document.getElementById("total").textContent)
+
+let paid = Number(document.getElementById("paid").value)
+
+let change = paid-total
+
+document.getElementById("change").textContent = change>0?change:0
 
 }
 
@@ -57,8 +84,22 @@ localStorage.setItem("sales",JSON.stringify(sales))
 alert("会計完了")
 
 cart={}
+document.getElementById("cart").innerHTML=""
+document.getElementById("total").textContent=0
+document.getElementById("paid").value=""
+document.getElementById("change").textContent=0
+
+}
+
+loadProducts()
+localStorage.setItem("sales",JSON.stringify(sales))
+
+alert("会計完了")
+
+cart={}
 updateTotal()
 
 }
+
 
 loadProducts()

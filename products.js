@@ -16,6 +16,18 @@ document.getElementById("list").innerHTML = html
 
 }
 
+function deleteProduct(index){
+
+let products = JSON.parse(localStorage.getItem("products")) || []
+
+products.splice(index,1)
+
+localStorage.setItem("products",JSON.stringify(products))
+
+loadProducts()
+
+}
+
 function addProduct(){
 
 let name = document.getElementById("name").value

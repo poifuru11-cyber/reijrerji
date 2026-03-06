@@ -14,7 +14,6 @@ ${item.price}円
 document.getElementById("products").innerHTML = html
 
 }
-
 function send(name,price){
 
 if(cart[name]){
@@ -106,6 +105,7 @@ document.getElementById("change").textContent=0
 }
 
 loadProducts()
+
 
 
 

@@ -4,8 +4,12 @@ let products = JSON.parse(localStorage.getItem("products")) || []
 
 let html=""
 
-products.forEach(p=>{
-html += `${p.name} ${p.price}円<br>`
+products.forEach((p,index)=>{
+html += `
+${p.name} ${p.price}円 
+<button onclick="deleteProduct(${index})">削除</button>
+<br>
+`
 })
 
 document.getElementById("list").innerHTML = html

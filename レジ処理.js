@@ -14,17 +14,22 @@ localStorage.setItem("sales", JSON.stringify(sales));
 
 function checkout(){
 
-let total = document.getElementById("total").textContent;
+let total = Number(document.getElementById("total").textContent);
+let payment = Number(document.getElementById("payment").value);
+let change = payment - total;
 
 let sale = {
   time: new Date().toLocaleString(),
-  total: total
+  cart: cart,
+  total: total,
+  payment: payment,
+  change: change
 };
 
 saveSale(sale);
 
 alert("会計完了");
 
-
 }
+
 

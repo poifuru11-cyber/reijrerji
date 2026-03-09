@@ -17,6 +17,12 @@ html += `${item} × ${s.cart[item].count}<br>`
 
 }
 
+html += `
+合計：${s.total}円<br>
+預り金：${s.payment}円<br>
+お釣り：${s.change}円<br>
+`
+  
 })
 
 document.getElementById("sales").innerHTML = html

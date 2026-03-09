@@ -6,7 +6,13 @@ function saveSale(data){
 
 let sales = JSON.parse(localStorage.getItem("sales")) || [];
 
-sales.push(data);
+sales.push({
+  time: new Date().toLocaleString(),
+  cart: cart,
+  total: total,
+  payment: payment,
+  change: change
+});
 
 localStorage.setItem("sales", JSON.stringify(sales));
 
@@ -24,5 +30,6 @@ let sale = {
 saveSale(sale);
 
 alert("会計完了");
+
 
 }

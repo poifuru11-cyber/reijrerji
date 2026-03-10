@@ -85,7 +85,7 @@ document.getElementById("change").textContent = change > 0 ? change : 0
 }
 function confirmPurchase(){
 
-let sale = {
+let sales = {
   time: new Date().toLocaleString(),
   cart: cart,
   total: total,
@@ -106,6 +106,7 @@ document.getElementById("change").textContent=0
 }
 
 loadProducts()
+
 
 
 

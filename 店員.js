@@ -85,12 +85,13 @@ document.getElementById("change").textContent = change > 0 ? change : 0
 }
 function confirmPurchase(){
 
-let sales = JSON.parse(localStorage.getItem("sales")) || []
-
-sales.push({
-time:new Date().toLocaleString(),
-cart:cart
-})
+let sale = {
+  time: new Date().toLocaleString(),
+  cart: cart,
+  total: total,
+  payment: payment,
+  change: change
+};
 
 localStorage.setItem("sales",JSON.stringify(sales))
 
@@ -105,6 +106,7 @@ document.getElementById("change").textContent=0
 }
 
 loadProducts()
+
 
 
 

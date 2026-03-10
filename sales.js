@@ -1,6 +1,6 @@
 function loadSales(){
 
-let sales = JSON.parse(localStorage.getItem("sale")) || []
+let sales = JSON.parse(localStorage.getItem("sales")) || []
 
 let html=""
 

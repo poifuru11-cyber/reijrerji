@@ -120,4 +120,8 @@ button.confirm {
   color: white;
   border-radius: 12px;
   border: none;
+　position: relative;
+　z-index: 10;
+
 }
+

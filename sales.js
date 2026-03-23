@@ -30,3 +30,10 @@ document.getElementById("sales").innerHTML = html
 }
 
 loadSales()
+
+function clearSales(){
+if(confirm("売上履歴を全削除しますか？")){
+localStorage.removeItem("sales")
+loadSales()
+}
+}

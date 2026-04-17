@@ -2,10 +2,7 @@ function loadSales(){
 let sales = JSON.parse(localStorage.getItem("sales")) || []
 let html=""
 sales.forEach(s=>{
-html += `
-<hr>
-${s.time}<br>
-`
+html += `<hr><input type="checkbox" class="sel" value="${sales.indexOf(s)}"> `
 for(let item in s.cart){
 html += `${item} × ${s.cart[item].count}<br>`
 }
@@ -24,3 +21,12 @@ loadSales()
 }
 }
 loadSales()
+
+
+function deleteSelected(){
+let sales = JSON.parse(localStorage.getItem("sales")) || []
+const checked = [...document.querySelectorAll(".sel:checked")].map(e=>Number(e.value))
+const newSales = sales.filter((_,i)=> !checked.includes(i))
+localStorage.setItem("sales", JSON.stringify(newSales))
+loadSales()
+}

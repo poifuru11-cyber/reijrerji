@@ -20,7 +20,7 @@ updateTotal()
 }
 function updateCart(){
 let html=""
-let key in cart{
+for(let key in cart){
 html += `
 ${key} × ${cart[key].count}
 <button onclick="removeItem('${key}')">－</button>
@@ -41,7 +41,7 @@ updateTotal()
 }
 function updateTotal(){
 let total=0
-let key in cart{
+for(let key in cart){
 total += cart[key].count * cart[key].price
 }
 document.getElementById("total").textContent=total
@@ -75,7 +75,6 @@ document.getElementById("paid").value=""
 document.getElementById("change").textContent=0
 }
 loadProducts()
-
 
 
 

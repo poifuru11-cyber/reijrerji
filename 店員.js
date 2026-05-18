@@ -20,7 +20,7 @@ updateTotal()
 }
 function updateCart(){
 let html=""
-for(let key in cart){
+let key in cart{
 html += `
 ${key} × ${cart[key].count}
 <button onclick="removeItem('${key}')">－</button>

@@ -41,7 +41,7 @@ updateTotal()
 }
 function updateTotal(){
 let total=0
-for(let key in cart){
+let key in cart{
 total += cart[key].count * cart[key].price
 }
 document.getElementById("total").textContent=total

@@ -1,4 +1,5 @@
 let cart = {};
+let box = {};
 function loadProducts(){
 let products = JSON.parse(localStorage.getItem("products")) || []
 const html = products.map(item => `
@@ -9,15 +10,33 @@ ${item.price}円
 `).join('');
 document.getElementById("products").innerHTML = html
 }
-function send(name,price){
-if(cart[name]){
-cart[name].count++
-}else{
-cart[name]={count:1,price:price}
+function send(name, price){
+
+  // 商品ごとの管理
+  if(cart[name]){
+    cart[name].count++
+  }else{
+    cart[name] = {
+      count: 1,
+      price: price
+    }
+  }
+
+  // 値段ごとの管理
+  if(box[price]){
+    box[price].count++
+  }else{
+    box[price] = {
+      count: 1
+    }
+  }
+
+  console.log(box)
+
+  updateCart()
+  updateTotal()
 }
-updateCart()
-updateTotal()
-}
+
 function updateCart(){
 let html=""
 for(let key in cart){
@@ -41,8 +60,8 @@ updateTotal()
 }
 function updateTotal(){
 let total=0
-for(let key in cart){
-total += cart[key].count * cart[key].price
+for(let key in box){
+total += box[key].count * box[key].price
 }
 document.getElementById("total").textContent=total
 calcChange()
@@ -75,10 +94,6 @@ document.getElementById("paid").value=""
 document.getElementById("change").textContent=0
 }
 loadProducts()
-
-
-
-
 
 
 

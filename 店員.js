@@ -61,7 +61,7 @@ updateTotal()
 function updateTotal(){
 let total=0
 for(let key in box){
-total += box[key].count * box[key].price
+total += box[key].count * box[key].price:price
 }
 document.getElementById("total").textContent=total
 calcChange()

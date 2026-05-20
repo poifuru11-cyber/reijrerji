@@ -42,7 +42,7 @@ updateTotal()
 function updateTotal(){
 let total=0
 for(let key in cart){
-total += cart[key].count * cart[key].price
+total += cart[name].count * cart[key].price
 }
 document.getElementById("total").textContent=total
 calcChange()

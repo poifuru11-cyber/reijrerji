@@ -11,7 +11,7 @@ document.getElementById("products").innerHTML = html
 }
 function send(name,price){
 if(cart[name]){
-cart[name].count+
+cart[name].count++
 }else{
 cart[name]={count:1,price:price}
 }
